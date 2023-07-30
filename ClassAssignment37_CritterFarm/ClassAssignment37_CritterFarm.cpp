@@ -22,14 +22,14 @@ inline std::string Critter::GetName() const {
 class Farm {
 public:
     Farm(int spaces = 1);
-    void Add(const Critter& aCritter);
+    void Add(const Critter& aCritter);          //Member function requiring a Critter
     void RollCall() const;
 private:
-    std::vector<Critter> m_Critters;
+    std::vector<Critter> m_Critters;            //Holding a container of Critters
 };
 
 Farm::Farm(int spaces) {
-    m_Critters.reserve(spaces);
+    m_Critters.reserve(spaces);                 //reserves capacity to contain an element
 }
 
 void Farm::Add(const Critter& aCritter) {
@@ -51,7 +51,7 @@ int main()
     Farm myFarm(3);
 
     std::cout << "\nAdding three critters to the farm. \n";
-    myFarm.Add(Critter("Dawg"));
+    myFarm.Add(Critter("Dawg"));                //Instantiating Critters from the Farm class. Can be accessed like any other vector element (IE: Iterators)
     myFarm.Add(Critter("Duck"));
     myFarm.Add(Critter("Eggy"));
 
